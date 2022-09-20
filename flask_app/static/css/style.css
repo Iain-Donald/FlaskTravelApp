@@ -1,0 +1,73 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  padding: 0;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+#map {
+  height: 100%;
+  z-index: 1;
+}
+
+.googleMaps {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.topMenu {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 100% !important;
+  height: 20% !important;
+  background-color: rgb(221, 221, 221);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.divLink {
+  display: flex;
+}
+
+.topButton {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid #464646;
+  width: 90pt;
+  margin: auto;
+  height: 90pt;
+  display: flex;
+  z-index: 1;
+  text-decoration: none;
+  text-align: center;
+}
+
+/*.topButton:hover {
+  background-color: #7B8EA4;
+}*/
+
+.buttonText {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+  text-decoration: none;
+  color: #464646;
+  font-size: 14pt;
+  text-shadow: 0px 0px 8px #779fdb;
+}
