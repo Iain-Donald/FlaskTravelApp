@@ -17,7 +17,11 @@ def hello(name):
 def map():
     # Instead of returning a string, 
     # we'll return the result of the render_template method, passing in the name of our HTML file
-    return render_template('map.html')  
+    return render_template('map.html')
+
+@app.route('/testcenter')                           
+def testcenter():
+    return render_template('testcenter.html')  
 
 
 
