@@ -1,6 +1,7 @@
 from flask_app import app
 from flask import render_template,redirect,request,session,flash
 from flask_app.models.usermap import Usermap
+from flask_app.controllers import dbtalk
 
 """    ROUTES    """
 
@@ -21,7 +22,8 @@ def map():
 
 @app.route('/testcenter')                           
 def testcenter():
-    return render_template('testcenter.html')  
+    exampleTitle = dbtalk.dbtalk.getListingByID(0)
+    return render_template('testcenter.html', exampleTitle)
 
 
 
