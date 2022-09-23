@@ -1,4 +1,5 @@
  - MVC (Under Flask + MySQL)
+ - getListingByID 'title' to 'ListingData'
 
 
  Environment Commands:

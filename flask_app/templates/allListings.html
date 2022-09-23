@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>All Listings</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="../static/js/myscript.js">
+        </script>
+    </head>
+    <body>
+        <h1>All Listings</h1>
+        <table>
+            <tr>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Image</td>
+            </tr>
+            {%for i in range(Listings|length)%}
+            <tr>
+                <td>{{Listings[i]['title']}}</td>
+                <td>{{Listings[i]['description']}}</td>
+                <td>Images Go Here</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
