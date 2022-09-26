@@ -54,7 +54,7 @@ def loginPOST():
     redirectString = "/login"
 
     # check if account exists then return redirect to /allListings/< userID >
-    if(retrievedUserByEmail != "-1"):
+    if(retrievedUserByEmail != "-1" and retrievedUserByEmail['pw'] == data['pw']):
         redirectString = "/allListings/" + retrievedUserByEmail['userID']
 
     return redirect(redirectString)
