@@ -11,20 +11,14 @@
             "description": "description one"
         }
     ],
-    "Users": [
+
+    "Users":[
         {
             "firstName": "firstName_one",
             "lastName": "lastName_one",
             "email": "iaindonald@outlook.com",
             "pw": "password",
             "userID": "000"
-        },
-        {
-            "firstName": "FN",
-            "lastName": "LN",
-            "email": "EM",
-            "pw": "PW",
-            "userID": "2741"
         }
     ]
 }
