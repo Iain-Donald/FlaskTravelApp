@@ -14,7 +14,9 @@
 
     "Users":[
         {
-            "name": "user one",
+            "firstName": "firstName_one",
+            "lastName": "lastName_one",
+            "email": "iaindonald@outlook.com",
             "pw": "password",
             "userID": "000"
         }

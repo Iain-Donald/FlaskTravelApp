@@ -38,6 +38,21 @@ def allListings(userID):
 def loginPage():
     return render_template('login.html')
 
+@app.route("/loginPOST", methods=['POST', 'GET'])
+def loginPOST():
+
+    return redirect("/allListings/0")
+
+@app.route("/new", methods=['POST', 'GET'])
+def new():
+    data = {
+        "firstName": request.form.get("first_name"),
+        "lastName" : request.form.get("last_name"),
+        "email" : request.form.get("email"),
+        "pw" : request.form.get("password")
+    }
+    return render_template('login.html')
+
 
 
 
