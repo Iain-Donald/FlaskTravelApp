@@ -31,7 +31,8 @@ def testcenter(id, userID):
 @app.route('/allListings/<userID>')
 def allListings(userID):
     Listings = dbtalk.dbtalk.getAllListings()
-    return render_template('allListings.html', Listings = Listings)
+    currentUser = dbtalk.dbtalk.getUserByID(userID)
+    return render_template('allListings.html', Listings = Listings, currentUser = currentUser)
 
 @app.route('/login')
 def loginPage():
@@ -40,7 +41,23 @@ def loginPage():
 @app.route("/loginPOST", methods=['POST', 'GET'])
 def loginPOST():
 
-    return redirect("/allListings/0")
+    # retrieve data from form
+    data = {
+        "email": request.form.get("email"),
+        "pw" : request.form.get("password")
+    }
+
+    # get user by email
+    retrievedUserByEmail = dbtalk.dbtalk.getUserByEmail(data['email'])
+
+    # default case return back to login page
+    redirectString = "/login"
+
+    # check if account exists then return redirect to /allListings/< userID >
+    if(retrievedUserByEmail != "-1"):
+        redirectString = "/allListings/" + retrievedUserByEmail['userID']
+
+    return redirect(redirectString)
 
 @app.route("/new", methods=['POST', 'GET'])
 def new():
@@ -56,25 +73,21 @@ def new():
 
     conf = request.form.get("conf")
 
-    #check if password and password confirmation are the same
-    if(conf == data['pw']):
-        print("TRUE")
-    else:
-        print("FALSE")
-
     """implement check for if userID exists and assign new userID"""
 
-    y = json.dumps(data)
-
-    print(y)
+    print(json.dumps(data))
 
     #insert object to JSON file
 
-    with open('flask_app\controllers\db.json','r+') as file:
-        file_data = json.load(file)
-        file_data["Users"].append(data)
-        file.seek(0)
-        json.dump(file_data, file, indent = 4)
+    if(conf == data['pw']): #check if password and password confirmation are the same
+        print("TRUE")
+        with open('flask_app\controllers\db.json','r+') as file:
+            file_data = json.load(file)
+            file_data["Users"].append(data)
+            file.seek(0)
+            json.dump(file_data, file, indent = 4)
+    else:
+        print("FALSE")
 
     return render_template('login.html')
 

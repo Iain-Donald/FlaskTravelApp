@@ -13,18 +13,18 @@
     ],
     "Users": [
         {
-            "firstName": "firstName_one",
-            "lastName": "lastName_one",
+            "firstName": "Iain",
+            "lastName": "Donald",
             "email": "iaindonald@outlook.com",
             "pw": "password",
-            "userID": "000"
+            "userID": "2737"
         },
         {
-            "firstName": "FN",
-            "lastName": "LN",
-            "email": "EM",
-            "pw": "PW",
-            "userID": "2741"
+            "firstName": "Sandra",
+            "lastName": "Militaru",
+            "email": "sandra.militaru@gmail.com",
+            "pw": "password",
+            "userID": "6625"
         }
     ]
 }
