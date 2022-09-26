@@ -1,5 +1,6 @@
  - MVC (Under Flask + MySQL)
  - getListingByID 'title' to 'ListingData'
+ - error page for when user attempts to access userid URL that doesn't exist
 
 
  Environment Commands:

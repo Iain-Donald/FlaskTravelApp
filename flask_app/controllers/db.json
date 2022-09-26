@@ -15,7 +15,8 @@
     "Users":[
         {
             "name": "user one",
-            "pw": "password"
+            "pw": "password",
+            "userID": "000"
         }
     ]
 }

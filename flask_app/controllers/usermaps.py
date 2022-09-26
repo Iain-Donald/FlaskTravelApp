@@ -20,8 +20,8 @@ def map():
     # we'll return the result of the render_template method, passing in the name of our HTML file
     return render_template('map.html')
 
-@app.route('/testcenter/<id>')
-def testcenter(id):
+@app.route('/testcenter/<id>/<userID>')
+def testcenter(id, userID):
     id = int(id)
 
     listingTitle = dbtalk.dbtalk.getListingByID(id)['title']
@@ -29,10 +29,14 @@ def testcenter(id):
 
     return render_template('testcenter.html', listingTitle = listingTitle, listingDescription = listingDescription)
 
-@app.route('/allListings')
-def allListings():
+@app.route('/allListings/<userID>')
+def allListings(userID):
     Listings = dbtalk.dbtalk.getAllListings()
     return render_template('allListings.html', Listings = Listings)
+
+@app.route('/login')
+def loginPage():
+    return render_template('login.html')
 
 
 
