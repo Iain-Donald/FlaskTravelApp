@@ -32,7 +32,8 @@ def testcenter(id, userID):
 def allListings(userID):
     Listings = dbtalk.dbtalk.getAllListings()
     currentUser = dbtalk.dbtalk.getUserByID(userID)
-    return render_template('allListings.html', Listings = Listings, currentUser = currentUser)
+    Users = dbtalk.dbtalk.getAllUsers()
+    return render_template('allListings.html', Listings = Listings, currentUser = currentUser, Users = Users)
 
 @app.route('/login')
 def loginPage():

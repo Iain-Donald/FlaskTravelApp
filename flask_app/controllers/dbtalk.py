@@ -40,4 +40,12 @@ class dbtalk:
         Listings = data['Listings']
             
         return Listings
+
+    def getAllUsers():
+        f = open('flask_app\controllers\db.json')
+        data = json.load(f)
+        #Listings = "-1"
+        Users = data['Users']
+            
+        return Users
     

@@ -3,12 +3,14 @@
         {
             "id": "0",
             "title": "Iain's house",
-            "description": "description zero"
+            "description": "description zero",
+            "userID": "2737"
         },
         {
             "id": "1",
             "title": "Sandra's house",
-            "description": "description one"
+            "description": "description one",
+            "userID": "2737"
         }
     ],
     "Users": [
@@ -18,6 +20,13 @@
             "email": "iaindonald@outlook.com",
             "pw": "password",
             "userID": "2737"
+        },
+        {
+            "firstName": "Sandra",
+            "lastName": "Militaru",
+            "email": "sandra.militaru@gmail.com",
+            "pw": "password",
+            "userID": "4514"
         }
     ]
 }

@@ -11,12 +11,14 @@
         <table>
             <tr>
                 <td>Title</td>
+                <td>Listed By</td>
                 <td>Description</td>
                 <td>Image</td>
             </tr>
             {%for i in range(Listings|length)%}
             <tr>
                 <td>{{Listings[i]['title']}}</td>
+                <td>{{Listings[i]['userID']}}</td>
                 <td>{{Listings[i]['description']}}</td>
                 <td>Images Go Here</td>
             </tr>
