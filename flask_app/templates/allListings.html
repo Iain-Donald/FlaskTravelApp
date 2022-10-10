@@ -11,11 +11,12 @@
             <h1 id="helloText">Hello, {{currentUser['firstName']}}</h1>
             <a href="/newListing/{{currentUser['userID']}}" type="button" id="newListing">New Listing</a>
         </div>
+        <a href="/login" id="logout">Logout</a>
         
         <table id="listingsTable">
             <tr>
                 <th>Title</th>
-                <th>Listed By</th>
+                <th>Published By</th>
                 <th>Description</th>
                 <th>Image</th>
             </tr>

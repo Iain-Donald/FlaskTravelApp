@@ -5,6 +5,10 @@
  - page for viewing listing
  - delete button if listing is by user
  - logout button
+ - background image
+ - login errors ex: email or password invalid
+ - logged in cookie
+ - encrypt/decrypt password
 
 
  Environment Commands:
