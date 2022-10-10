@@ -2,6 +2,9 @@
  - getListingByID 'title' to 'ListingData'
  - error page for when user attempts to access userid URL that doesn't exist
  - style things
+ - page for viewing listing
+ - delete button if listing is by user
+ - logout button
 
 
  Environment Commands:
