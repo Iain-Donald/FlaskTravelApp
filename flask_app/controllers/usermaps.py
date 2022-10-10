@@ -10,11 +10,6 @@ import json, random
 def hello_world():
     return 'Hello World!'  # Return the string 'Hello World!' as a response
 
-@app.route('/hello/<name>') # for a route '/hello/____' anything after '/hello/' gets passed as a variable 'name'
-def hello(name):
-    print(name)
-    return "Hello, " + name
-
 @app.route('/map')                           
 def map():
     return render_template('map.html')
@@ -63,10 +58,15 @@ def loginPOST():
 
     return redirect(redirectString)
 
+@app.route('/newListing/<userID>')
+def newListing(userID):
+    return render_template('newListing.html', userID = userID)
+
+
 @app.route("/new", methods=['POST', 'GET'])
 def new():
 
-    #get object to be transferred to JSON for ds.json
+    #get object to be transferred to JSON for db.json
     data = {
         "firstName": request.form.get("first_name"),
         "lastName" : request.form.get("last_name"),
@@ -94,6 +94,33 @@ def new():
         print("FALSE")
 
     return render_template('login.html')
+
+@app.route("/saveNewListing/<userID>", methods=['POST', 'GET'])
+def saveNewListing(userID):
+
+    #get object to be transferred to JSON for db.json
+    data = {
+        "id": str(random.randrange(11001, 22000)),
+        "title" : request.form.get("title"),
+        "description" : request.form.get("description"),
+        "userID" : userID
+    }
+
+    """implement check for if userID exists and assign new userID"""
+
+    print(json.dumps(data))
+
+    #insert object to JSON file
+
+    with open('flask_app\controllers\db.json','r+') as file:
+        file_data = json.load(file)
+        file_data["Listings"].append(data)
+        file.seek(0)
+        json.dump(file_data, file, indent = 4)
+
+    redirectString = "/allListings/" + userID
+
+    return redirect(redirectString)
 
 
 

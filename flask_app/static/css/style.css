@@ -15,9 +15,7 @@ html {
   padding: 0;
 }
 
-body {
-  margin-bottom: 60px;
-}
+body {margin-bottom: 60px;}
 
 #map {
   height: 100%;
@@ -99,12 +97,31 @@ body {
 }
 
 .header {
-  display: flex;
+  display: inline-flex;
   width: 100%;
-  text-align: center;
-  justify-content: space-evenly;
+  height: 10vh;
+}
+
+#helloText {
+  width: fit-content;
+  align-self: center;
+  justify-self: center;
 }
 
 #newListing {
-  height: 100%;
+  align-self: right;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 25px;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 5px;
+  background-color:#04AA6D;
+  color: white;
+  float: right;
+  text-decoration: none;
+}
+
+#newListing:hover {
+  background-color: #0c885a;
 }

@@ -8,8 +8,8 @@
     </head>
     <body>
         <div class="header">
-            <h1>Hello, {{currentUser['firstName']}}</h1>
-            <button type="button" id="newListing">New Listing</button>
+            <h1 id="helloText">Hello, {{currentUser['firstName']}}</h1>
+            <a href="/newListing/{{currentUser['userID']}}" type="button" id="newListing">New Listing</a>
         </div>
         
         <table id="listingsTable">
