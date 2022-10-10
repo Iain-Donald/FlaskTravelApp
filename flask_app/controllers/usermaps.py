@@ -33,7 +33,10 @@ def allListings(userID):
     Listings = dbtalk.dbtalk.getAllListings()
     currentUser = dbtalk.dbtalk.getUserByID(userID)
     Users = dbtalk.dbtalk.getAllUsers()
-    return render_template('allListings.html', Listings = Listings, currentUser = currentUser, Users = Users)
+    allListingsUserList = []
+    for key in Listings:
+        allListingsUserList.append(dbtalk.dbtalk.getUserByID(key['userID'])['firstName'])
+    return render_template('allListings.html', Listings = Listings, currentUser = currentUser, Users = Users, allListingsUserList = allListingsUserList)
 
 @app.route('/login')
 def loginPage():

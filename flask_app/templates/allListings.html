@@ -7,18 +7,22 @@
         </script>
     </head>
     <body>
-        <h1>Hello, {{currentUser['firstName']}}</h1>
+        <div class="header">
+            <h1>Hello, {{currentUser['firstName']}}</h1>
+            <button type="button" id="newListing">New Listing</button>
+        </div>
+        
         <table id="listingsTable">
             <tr>
-                <td>Title</td>
-                <td>Listed By</td>
-                <td>Description</td>
-                <td>Image</td>
+                <th>Title</th>
+                <th>Listed By</th>
+                <th>Description</th>
+                <th>Image</th>
             </tr>
             {%for i in range(Listings|length)%}
             <tr>
                 <td>{{Listings[i]['title']}}</td>
-                <td>{{Listings[i]['userID']}}</td>
+                <td>{{allListingsUserList[i]}}</td>
                 <td>{{Listings[i]['description']}}</td>
                 <td>Images Go Here</td>
             </tr>
