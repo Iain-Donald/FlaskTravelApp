@@ -138,10 +138,13 @@ body {
   color: white;
   float: right;
   text-decoration: none;
+  font-size: 12pt;
 }
 
 #newListing:hover {
   background-color: #0c885a;
+  transition-duration: 100ms;
+  translate: 0px 1px;
 }
 
 #logout {

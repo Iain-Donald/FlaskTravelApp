@@ -33,7 +33,12 @@
         <div class="listingBody">
             <div class="headingBox">
                 <h2>{{Listings[i]['title']}}</h2>
-                <h4>Listed by {{allListingsUserList[i]}}</h4>
+                {%if (allListingsUserList[i] == currentUser['firstName'])%}
+                    <h4>Listed by <i style="color:purple">you</i></h4>
+                {% else %}
+                    <h4>Listed by {{allListingsUserList[i]}}</h4>
+                {%endif%}
+                
             </div>
             <div class="descriptionBody">
                 <p>{{Listings[i]['description']}}</p>
