@@ -154,12 +154,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   width: 90vw;
   margin: 0px 5vw;
-  border-bottom: 1px solid #CCCCCC;
+  box-shadow: 1px 4px 2px #CCCCCC;
   padding: 20px 0px;
+  border-radius: 5px;
+  margin-top: 15px;
+  background-color: #F8F8F8;
+}
+
+.listingBody:hover {
+  box-shadow: 4px 6px 4px #CFCFCF;
+  background-color: #F3F3F3;
 }
 
 .headingBox {
   width: 15%;
+  padding-left: 15px;
 }
 
 .descriptionBody {
