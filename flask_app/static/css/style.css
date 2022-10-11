@@ -17,7 +17,7 @@ html {
 
 body {
   margin-bottom: 60px;
-  background-image: url('worldmap1.png');
+  /*background-image: url('worldmap1.png');*/
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -146,4 +146,26 @@ body {
 #logout {
   padding: 20px 0px;
   text-decoration: none;
+}
+
+.listingBody {
+  display: inline-flex;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 90vw;
+  margin: 0px 5vw;
+  border-bottom: 1px solid #CCCCCC;
+  padding: 20px 0px;
+}
+
+.headingBox {
+  width: 15%;
+}
+
+.descriptionBody {
+  width: 70%;
+  padding: 0px 5%;
+}
+
+.photoBox {
+  width: 15%;
 }

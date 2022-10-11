@@ -13,7 +13,7 @@
         </div>
         <a href="/login" id="logout">Logout</a>
         
-        <table id="listingsTable">
+        <!--table id="listingsTable">
             <tr>
                 <th>Title</th>
                 <th>Published By</th>
@@ -21,13 +21,27 @@
                 <th>Image</th>
             </tr>
             {%for i in range(Listings|length)%}
-            <tr>
+            tr>
                 <td>{{Listings[i]['title']}}</td>
                 <td>{{allListingsUserList[i]}}</td>
                 <td>{{Listings[i]['description']}}</td>
                 <td>Images Go Here</td>
             </tr>
             {% endfor %}
-        </table>
+        </table-->
+        {%for i in range(Listings|length)%}
+        <div class="listingBody">
+            <div class="headingBox">
+                <h2>{{Listings[i]['title']}}</h2>
+                <h4>Listed by {{allListingsUserList[i]}}</h4>
+            </div>
+            <div class="descriptionBody">
+                <p>{{Listings[i]['description']}}</p>
+            </div>
+            <div class="photoBox">
+                <p>Images Go Here</p>
+            </div>
+        </div>
+        {% endfor %}
     </body>
 </html>

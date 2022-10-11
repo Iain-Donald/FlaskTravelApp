@@ -9,6 +9,7 @@
  - login errors ex: email or password invalid
  - logged in cookie
  - encrypt/decrypt password
+ - ability to click on user to get contact info
 
 
  Environment Commands:
