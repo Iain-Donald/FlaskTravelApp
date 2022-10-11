@@ -115,7 +115,8 @@ body {
 
 .header {
   display: inline-flex;
-  width: 100%;
+  width: 90vw;
+  padding-left: 5vw;
   height: 10vh;
 }
 
@@ -144,7 +145,7 @@ body {
 }
 
 #logout {
-  padding: 20px 0px;
+  padding: 20px 5vw;
   text-decoration: none;
 }
 
@@ -168,4 +169,19 @@ body {
 
 .photoBox {
   width: 15%;
+}
+
+/*                                             New Listing                                             */
+
+#descriptionEntry {
+  width: 20vw;
+}
+
+.centerBox {
+  display: block;
+  text-align: center;
+  margin: 20vw;
+  width: 60vw;
+  border: 1px solid #CCCCCC;
+  padding: 50px 0px;
 }
