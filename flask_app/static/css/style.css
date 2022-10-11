@@ -195,5 +195,6 @@ body {
   margin: 20vw;
   width: 60vw;
   border: 1px solid #CCCCCC;
+  border-radius: 5px;
   padding: 50px 0px;
 }

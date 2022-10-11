@@ -6,9 +6,10 @@ import json, random
 
 """    ROUTES    """
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'  # Return the string 'Hello World!' as a response
+@app.route('/<testNum>')
+def hello_world(testNum):
+    returnString = "Hello World! " + testNum
+    return returnString  # Return the string 'Hello World!' as a response
 
 @app.route('/map')                           
 def map():
