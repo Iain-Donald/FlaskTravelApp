@@ -1,6 +1,5 @@
 from flask_app import app
 from flask import render_template,redirect,request,session,flash
-from flask_app.models.usermap import Usermap
 from flask_app.controllers import dbtalk
 import json, random
 
@@ -24,7 +23,7 @@ def testcenter(id, userID):
 
     return render_template('testcenter.html', listingTitle = listingTitle, listingDescription = listingDescription)
 
-@app.route('/allListings/<userID>')
+@app.route('/allListings/<userID>') #     ALL LISTINGS PAGE
 def allListings(userID):
     Listings = dbtalk.dbtalk.getAllListings()
     currentUser = dbtalk.dbtalk.getUserByID(userID)
@@ -38,7 +37,7 @@ def allListings(userID):
 def loginPage():
     return render_template('login.html')
 
-@app.route("/loginPOST", methods=['POST', 'GET'])
+@app.route("/loginPOST", methods=['POST', 'GET']) ###     LOGIN
 def loginPOST():
 
     # retrieve data from form
@@ -64,7 +63,7 @@ def newListing(userID):
     return render_template('newListing.html', userID = userID)
 
 
-@app.route("/new", methods=['POST', 'GET'])
+@app.route("/new", methods=['POST', 'GET']) ###     CREATE NEW USER
 def new():
 
     #get object to be transferred to JSON for db.json
@@ -84,7 +83,7 @@ def new():
 
     #insert object to JSON file
 
-    if(conf == data['pw']): #check if password and password confirmation are the same
+    if(conf == data['pw']): #check if password and password confirmation match
         print("TRUE")
         with open('flask_app\controllers\db.json','r+') as file:
             file_data = json.load(file)
@@ -96,7 +95,7 @@ def new():
 
     return render_template('login.html')
 
-@app.route("/saveNewListing/<userID>", methods=['POST', 'GET'])
+@app.route("/saveNewListing/<userID>", methods=['POST', 'GET']) ###     SAVE NEW LISTING
 def saveNewListing(userID):
 
     #get object to be transferred to JSON for db.json
@@ -123,6 +122,12 @@ def saveNewListing(userID):
 
     return redirect(redirectString)
 
+@app.route("/deleteListing/<userID>/<ID>", methods=['POST', 'GET']) ###     DELETE LISTING
+def deleteListing(userID, ID):
 
+    dbtalk.dbtalk.deleteListingByID(ID)
+
+    redirectString = "/allListings/" + userID
+    return redirect(redirectString)
 
 

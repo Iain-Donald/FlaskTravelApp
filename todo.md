@@ -10,6 +10,7 @@
  - logged in cookie
  - encrypt/decrypt password
  - ability to click on user to get contact info
+ - move usermaps add to JSON functions to dbtalk and call dbtalk in usermaps
 
 
  Environment Commands:

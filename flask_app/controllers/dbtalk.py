@@ -1,3 +1,4 @@
+from email.policy import default
 import json
 from turtle import title
 class dbtalk:
@@ -46,6 +47,28 @@ class dbtalk:
         data = json.load(f)
         #Listings = "-1"
         Users = data['Users']
+
+    def deleteListingByID(ID):
+        ###f = open('flask_app\controllers\db.json')
+        ###data = json.load(f)
+
+        with open("flask_app\controllers\db.json") as f:
+            data = json.load(f)
+
+        idx = 0
+
+        for i in data['Listings']:
+            print(i['id'] + "  ID: " + ID)
+            if i['id'] == ID:
+                print("TRUE")
+                del data['Listings'][idx]
+            idx += 1
+
+        with open("flask_app\controllers\db.json", 'w', encoding='utf-8') as fa:
+            fa.write(json.dumps(data, indent=4))
+
+    def deleteUserByID():
+        return -1
             
         return Users
     
