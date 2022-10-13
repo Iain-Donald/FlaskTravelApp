@@ -13,7 +13,7 @@
                 <input type="text" name="email" class="inputText" placeholder="Email">
                 <br>
                 <input type="password" name="password" class="inputText" placeholder="Password">
-                <br><br>
+                <br><span style="color: red;">{{session.loginError}}</span><br>
                 <input type="submit" value="Login" class="publish">
             </form>
         </div>
@@ -29,7 +29,7 @@
                 <input type="password" name="password" class="inputText" placeholder="Password">
                 <br>
                 <input type="password" name="conf" class="inputText" placeholder="Confirm Password">
-                <br><br>
+                <br><span style="color: red;">{{session.newAccountError}}</span><br>
                 <input type="submit" value="Create" class="publish">
             </form>
         </div>

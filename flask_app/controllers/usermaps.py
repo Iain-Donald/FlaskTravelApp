@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from flask_app import app
 from flask import render_template,redirect,request,session,flash
 from flask_app.controllers import dbtalk
@@ -31,10 +32,16 @@ def allListings(userID):
     allListingsUserList = []
     for key in Listings:
         allListingsUserList.append(dbtalk.dbtalk.getUserByID(key['userID'])['firstName'])
-    return render_template('allListings.html', Listings = Listings, currentUser = currentUser, Users = Users, allListingsUserList = allListingsUserList)
+    if(session['userActive'] != userID):
+        return redirect("/login")
+    else:
+        return render_template('allListings.html', Listings = Listings, currentUser = currentUser, Users = Users, allListingsUserList = allListingsUserList)
+    
 
 @app.route('/login')
 def loginPage():
+    session['userActive'] = -1
+    session['newAccountError'] = ""
     return render_template('login.html')
 
 @app.route("/loginPOST", methods=['POST', 'GET']) ###     LOGIN
@@ -46,6 +53,13 @@ def loginPOST():
         "pw" : request.form.get("password")
     }
 
+    session['newAccountError'] = ""
+
+    for key in data:
+        if(data[key] == ""):
+            session['loginError'] = "one or more fields left blank"
+            return redirect("/login")
+
     # get user by email
     retrievedUserByEmail = dbtalk.dbtalk.getUserByEmail(data['email'])
 
@@ -55,11 +69,18 @@ def loginPOST():
     # check if account exists then return redirect to /allListings/< userID >
     if(retrievedUserByEmail != "-1" and retrievedUserByEmail['pw'] == data['pw']):
         redirectString = "/allListings/" + retrievedUserByEmail['userID']
+        session["userActive"] = retrievedUserByEmail['userID']
+        session['loginError'] = ""
+        session['newAccountError'] = ""
+    else:
+        session['loginError'] = "Incorrect username or password"
 
     return redirect(redirectString)
 
 @app.route('/newListing/<userID>')
 def newListing(userID):
+    if(session['userActive'] != userID):
+        return redirect("/login")
     return render_template('newListing.html', userID = userID)
 
 
@@ -75,23 +96,31 @@ def new():
         "userID": str(random.randrange(1, 11000))
     }
 
+    session['loginError'] = ""
+
+    for key in data:
+        if(data[key] == ""):
+            session['newAccountError'] = "one or more fields left blank"
+            return render_template('login.html')
+
     conf = request.form.get("conf")
 
     """implement check for if userID exists and assign new userID"""
 
-    print(json.dumps(data))
+    ###print(json.dumps(data))
 
     #insert object to JSON file
 
     if(conf == data['pw']): #check if password and password confirmation match
-        print("TRUE")
+        ###print("TRUE")
+        session['newAccountError'] = ""
         with open('flask_app\controllers\db.json','r+') as file:
             file_data = json.load(file)
             file_data["Users"].append(data)
             file.seek(0)
             json.dump(file_data, file, indent = 4)
     else:
-        print("FALSE")
+        session['newAccountError'] = "passwords don't match"
 
     return render_template('login.html')
 
@@ -108,7 +137,7 @@ def saveNewListing(userID):
 
     """implement check for if userID exists and assign new userID"""
 
-    print(json.dumps(data))
+    ###print(json.dumps(data))
 
     #insert object to JSON file
 
