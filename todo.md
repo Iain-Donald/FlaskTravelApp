@@ -1,13 +1,13 @@
- - MVC (Under Flask + MySQL)
+ * MVC (Under Flask + MySQL)
  - getListingByID 'title' to 'ListingData'
- - error page for when user attempts to access userid URL that doesn't exist
+ * error page for when user attempts to access userid URL that doesn't exist
  - style things
  - page for viewing listing
- - delete button if listing is by user
- - logout button
+ * delete button if listing is by user
+ * logout button
  - background image
- - login errors ex: email or password invalid
- - logged in cookie
+ * login errors ex: email or password invalid
+ * logged in cookie
  - encrypt/decrypt password
  - ability to click on user to get contact info
  - move usermaps add to JSON functions to dbtalk and call dbtalk in usermaps
