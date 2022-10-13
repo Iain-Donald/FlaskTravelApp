@@ -2,6 +2,9 @@ from asyncio.windows_events import NULL
 from flask_app import app
 from flask import render_template,redirect,request,session,flash
 from flask_app.controllers import dbtalk
+from flask_bcrypt import Bcrypt
+bcrypt = Bcrypt(app)
+app.secret_key = 'password123verysecure'
 import json, random
 
 """    ROUTES    """
@@ -67,7 +70,7 @@ def loginPOST():
     redirectString = "/login"
 
     # check if account exists then return redirect to /allListings/< userID >
-    if(retrievedUserByEmail != "-1" and retrievedUserByEmail['pw'] == data['pw']):
+    if(retrievedUserByEmail != "-1" and bcrypt.check_password_hash(retrievedUserByEmail['pw'], data['pw'])):
         redirectString = "/allListings/" + retrievedUserByEmail['userID']
         session["userActive"] = retrievedUserByEmail['userID']
         session['loginError'] = ""
@@ -87,12 +90,16 @@ def newListing(userID):
 @app.route("/new", methods=['POST', 'GET']) ###     CREATE NEW USER
 def new():
 
+    rawPW = request.form.get("password")
+    pw_hash = bcrypt.generate_password_hash(rawPW)
+    pw_hash = str(pw_hash)
+
     #get object to be transferred to JSON for db.json
     data = {
         "firstName": request.form.get("first_name"),
         "lastName" : request.form.get("last_name"),
         "email" : request.form.get("email"),
-        "pw" : request.form.get("password"),
+        "pw" : pw_hash,
         "userID": str(random.randrange(1, 11000))
     }
 
@@ -111,7 +118,7 @@ def new():
 
     #insert object to JSON file
 
-    if(conf == data['pw']): #check if password and password confirmation match
+    if(conf == rawPW): #check if password and password confirmation match
         ###print("TRUE")
         session['newAccountError'] = ""
         with open('flask_app\controllers\db.json','r+') as file:

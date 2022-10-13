@@ -45,6 +45,13 @@
             "email": "sandra.militaru@gmail.com",
             "pw": "password",
             "userID": "4514"
+        },
+        {
+            "firstName": "Encrypted",
+            "lastName": "E",
+            "email": "Email",
+            "pw": "b'$2b$12$pC8XoMSCIZn3t8x6huOa2etBtgqwONgJIkO6Zo0CH5XJUgR9pYu8K'",
+            "userID": "3377"
         }
     ]
 }

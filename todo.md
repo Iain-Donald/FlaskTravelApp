@@ -11,6 +11,7 @@
  - encrypt/decrypt password
  - ability to click on user to get contact info
  - move usermaps add to JSON functions to dbtalk and call dbtalk in usermaps
+ - loop through bCrypt string, set /$ to @#
 
 
  Environment Commands:
@@ -20,3 +21,4 @@
  - pip list
  - pipenv shell
  - python server.py
+ - pip install flask-bcrypt
