@@ -8,13 +8,13 @@
     </head>
     <body>
         <div class="centerBox">
-            <h1>New Listing</h1>
-            <form action="/saveNewListing/{{userID}}" method="POST">
-                <input type="text" name="title" placeholder="Title" class="inputText">
+            <h1>Edit Listing</h1>
+            <form action="/editListing/{{userID}}" method="POST">
+                <input type="text" name="title" placeholder="Title">
                 <br>
-                <input type="text" name="description" id="descriptionEntry" placeholder="Description" class="inputText">
+                <input type="text" name="description" id="descriptionEntry" placeholder="Description">
                 <br><br>
-                <input type="submit" value="Publish" class="publish">
+                <input type="submit" value="Publish">
             </form>
             <a href="/allListings/{{userID}}">Back</a>
         </div>

@@ -126,7 +126,7 @@ body {
   justify-self: center;
 }
 
-#newListing {
+.newListing {
   align-self: right;
   margin-left: auto;
   margin-top: 10px;
@@ -141,7 +141,7 @@ body {
   font-size: 12pt;
 }
 
-#newListing:hover {
+.newListing:hover {
   background-color: #0c885a;
   transition-duration: 100ms;
   translate: 0px 1px;
@@ -192,9 +192,42 @@ body {
 .centerBox {
   display: block;
   text-align: center;
-  margin: 20vw;
-  width: 60vw;
+  margin: 10vh auto 0px auto;
+  width: fit-content;
   border: 1px solid #CCCCCC;
   border-radius: 5px;
-  padding: 50px 0px;
+  padding: 5vh 5vw;
+}
+
+.centerBox2 {
+  display: block;
+  text-align: center;
+  margin: 2vh auto;
+  width: fit-content;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  padding: 5vh 5vw;
+}
+
+
+.publish {
+  padding: 10px;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 5px;
+  background-color:#04AA6D;
+  color: white;
+  text-decoration: none;
+  font-size: 12pt;
+}
+
+.publish:hover {
+  background-color: #0c885a;
+  transition-duration: 100ms;
+  translate: 0px 1px;
+}
+
+.inputText {
+  margin-top: 10px;
+  padding: 3px;
+  font-size: 12pt;
 }
