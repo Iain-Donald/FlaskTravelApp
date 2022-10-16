@@ -69,8 +69,10 @@ def loginPOST():
     # default case return back to login page
     redirectString = "/login"
 
+    """ and bcrypt.check_password_hash(retrievedUserByEmail['pw'].decode('utf8'), data['pw'])"""
+
     # check if account exists then return redirect to /allListings/< userID >
-    if(retrievedUserByEmail != "-1" and bcrypt.check_password_hash(retrievedUserByEmail['pw'], data['pw'])):
+    if(retrievedUserByEmail != "-1" and retrievedUserByEmail['pw'] == data['pw']):
         redirectString = "/allListings/" + retrievedUserByEmail['userID']
         session["userActive"] = retrievedUserByEmail['userID']
         session['loginError'] = ""
@@ -99,7 +101,7 @@ def new():
         "firstName": request.form.get("first_name"),
         "lastName" : request.form.get("last_name"),
         "email" : request.form.get("email"),
-        "pw" : pw_hash,
+        "pw" : rawPW,
         "userID": str(random.randrange(1, 11000))
     }
 
