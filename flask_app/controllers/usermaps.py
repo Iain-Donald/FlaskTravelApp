@@ -169,3 +169,7 @@ def deleteListing(userID, ID):
     return redirect(redirectString)
 
 
+@app.route('/editListing/<listingID>')
+def editListing(listingID):
+    returnString = "Hello World! " + listingID
+    return returnString
