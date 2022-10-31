@@ -13,7 +13,7 @@ class dbtalk:
             
         return listingData
 
-    def updateListingByID(id):
+    def updateListingByID(id, newData):
         f = open('flask_app\controllers\db.json')
         data = json.load(f)
         listingData = "-1"
@@ -21,7 +21,7 @@ class dbtalk:
             print(i)
             if(int(i['id']) == id):
                 listingData = i
-                
+
         return -1
 
     def getUserByID(id):
