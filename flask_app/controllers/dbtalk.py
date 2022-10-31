@@ -13,6 +13,9 @@ class dbtalk:
             
         return listingData
 
+    def updateListingByID(id):
+        return -1
+
     def getUserByID(id):
         f = open('flask_app\controllers\db.json')
         data = json.load(f)
