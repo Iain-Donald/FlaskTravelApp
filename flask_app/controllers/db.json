@@ -32,7 +32,7 @@
             "firstName": "Encrypted",
             "lastName": "E",
             "email": "Email2",
-            "pw": "b'$2b$12$IFyMBj1uynhAYd0DjWy3BuI/cJQBA0LwGmPiOL/.GN58KagvZGj2i'",
+            "pw": "$2b$12$IFyMBj1uynhAYd0DjWy3BuI/cJQBA0LwGmPiOL/.GN58KagvZGj2i",
             "userID": "163"
         },
         {
