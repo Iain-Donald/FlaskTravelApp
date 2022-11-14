@@ -65,14 +65,17 @@ def loginPOST():
 
     # get user by email
     retrievedUserByEmail = dbtalk.dbtalk.getUserByEmail(data['email'])
+    print(retrievedUserByEmail['pw'])
+    hashedPass = retrievedUserByEmail['pw']
 
     # default case return back to login page
     redirectString = "/login"
 
     """ and bcrypt.check_password_hash(retrievedUserByEmail['pw'].decode('utf8'), data['pw'])"""
+    """ and retrievedUserByEmail['pw'] == data['pw'] """
 
     # check if account exists then return redirect to /allListings/< userID >
-    if(retrievedUserByEmail != "-1" and retrievedUserByEmail['pw'] == data['pw']):
+    if(retrievedUserByEmail != "-1" and bcrypt.check_password_hash(hashedPass, data['pw'])):
         redirectString = "/allListings/" + retrievedUserByEmail['userID']
         session["userActive"] = retrievedUserByEmail['userID']
         session['loginError'] = ""
@@ -93,10 +96,7 @@ def newListing(userID):
 def new():
 
     rawPW = request.form.get("password")
-    pw_hash = bcrypt.generate_password_hash(rawPW)
-    pw_hash = str(pw_hash)
-
-    """rawPW"""
+    pw_hash = bcrypt.generate_password_hash(rawPW).decode('utf-8')
 
     #get object to be transferred to JSON for db.json
     data = {
