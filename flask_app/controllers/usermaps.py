@@ -96,12 +96,14 @@ def new():
     pw_hash = bcrypt.generate_password_hash(rawPW)
     pw_hash = str(pw_hash)
 
+    """rawPW"""
+
     #get object to be transferred to JSON for db.json
     data = {
         "firstName": request.form.get("first_name"),
         "lastName" : request.form.get("last_name"),
         "email" : request.form.get("email"),
-        "pw" : rawPW,
+        "pw" : pw_hash,
         "userID": str(random.randrange(1, 11000))
     }
 
