@@ -12,23 +12,9 @@
             <a href="/newListing/{{currentUser['userID']}}" type="button" class="newListing">New Listing</a>
         </div>
         <a href="/login" id="logout">Logout</a>
+
+        <!--Listings-->
         
-        <!--table id="listingsTable">
-            <tr>
-                <th>Title</th>
-                <th>Published By</th>
-                <th>Description</th>
-                <th>Image</th>
-            </tr>
-            {%for i in range(Listings|length)%}
-            tr>
-                <td>{{Listings[i]['title']}}</td>
-                <td>{{allListingsUserList[i]}}</td>
-                <td>{{Listings[i]['description']}}</td>
-                <td>Images Go Here</td>
-            </tr>
-            {% endfor %}
-        </table-->
         {%for i in range(Listings|length)%}
         <div class="listingBody">
             <div class="headingBox">

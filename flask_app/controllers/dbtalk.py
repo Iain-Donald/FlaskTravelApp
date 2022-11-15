@@ -17,7 +17,6 @@ class dbtalk:
         with open('flask_app\controllers\db.json','r+') as file:
             file_data = json.load(file)
             for i in file_data['Listings']:
-            #print("i(id) : " + str(int(i['id'])))
                 if(int(i['id']) == int(id)):
                     print("TRUE")
                     i['title'] = newData['title']
@@ -25,9 +24,6 @@ class dbtalk:
             #file_data["Listings"].append(i)
             file.seek(0)
             json.dump(file_data, file, indent = 4)
-        #f = open('flask_app\controllers\db.json')
-        #data = json.load(f)
-        #print("ID : " + id)
         
 
 
@@ -65,11 +61,8 @@ class dbtalk:
     def getAllUsers():
         f = open('flask_app\controllers\db.json')
         data = json.load(f)
-        #Listings = "-1"
 
     def deleteListingByID(ID):
-        ###f = open('flask_app\controllers\db.json')
-        ###data = json.load(f)
 
         with open("flask_app\controllers\db.json") as f:
             data = json.load(f)
@@ -88,6 +81,4 @@ class dbtalk:
 
     def deleteUserByID():
         return -1
-            
-        return Users
     
