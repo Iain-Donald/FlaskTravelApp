@@ -19,14 +19,16 @@
             "lastName": "Donald",
             "email": "iaindonald@outlook.com",
             "pw": "$2b$12$mpXrxbgpw6M7wG.OxFrSjuS1/AdA7lJV6/ta2UHe6LNBmKVLO1/lK",
-            "userID": "8964"
+            "userID": "8964",
+            "group": "1"
         },
         {
             "firstName": "Sandra",
             "lastName": "Militaru",
             "email": "sandra.militaru@gmail.com",
             "pw": "$2b$12$A1TIiH.dhLijygoDl3jHLeVA/8ADltLrdVIpCZM3W6/mSKzsiZMpG",
-            "userID": "1734"
+            "userID": "1734",
+            "group": "1"
         }
     ],
     "ListingImages": [
