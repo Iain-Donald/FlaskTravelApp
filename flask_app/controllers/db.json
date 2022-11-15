@@ -28,5 +28,15 @@
             "pw": "$2b$12$A1TIiH.dhLijygoDl3jHLeVA/8ADltLrdVIpCZM3W6/mSKzsiZMpG",
             "userID": "1734"
         }
+    ],
+    "ListingImages": [
+        {
+            "path": "../static/images/mountain.png",
+            "ListingID": "15033"
+        },
+        {
+            "path": "../static/images/snow.png",
+            "ListingID": "20607"
+        }
     ]
 }
