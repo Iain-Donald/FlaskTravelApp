@@ -57,7 +57,6 @@ class dbtalk:
         f = open('flask_app\controllers\db.json')
         data = json.load(f)
         #Listings = "-1"
-        Users = data['Users']
 
     def deleteListingByID(ID):
         ###f = open('flask_app\controllers\db.json')

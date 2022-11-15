@@ -152,6 +152,7 @@ body {
 .listingBody {
   display: inline-flex;
   font-family: Arial, Helvetica, sans-serif;
+  height: 27vh;
   width: 90vw;
   margin: 0px 5vw;
   box-shadow: 1px 4px 2px #CCCCCC;
@@ -179,6 +180,13 @@ body {
 
 .photoBox {
   width: 15%;
+  height:inherit;
+  padding-right: 15px;
+}
+
+.imageBox {
+  width: 100%;
+  
 }
 
 /*                                             New Listing                                             */

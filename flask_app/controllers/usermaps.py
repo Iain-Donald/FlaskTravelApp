@@ -33,12 +33,14 @@ def allListings(userID):
     currentUser = dbtalk.dbtalk.getUserByID(userID)
     Users = dbtalk.dbtalk.getAllUsers()
     allListingsUserList = []
+    allListingsUserIDs = []
     for key in Listings:
         allListingsUserList.append(dbtalk.dbtalk.getUserByID(key['userID'])['firstName'])
+        allListingsUserIDs.append(dbtalk.dbtalk.getUserByID(key['userID'])['userID'])
     if(session['userActive'] != userID):
         return redirect("/login")
     else:
-        return render_template('allListings.html', Listings = Listings, currentUser = currentUser, Users = Users, allListingsUserList = allListingsUserList)
+        return render_template('allListings.html', Listings = Listings, currentUser = currentUser, userIDs = allListingsUserIDs, allListingsUserList = allListingsUserList)
     
 
 @app.route('/login')

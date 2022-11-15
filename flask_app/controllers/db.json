@@ -1,16 +1,16 @@
 {
     "Listings": [
         {
-            "id": "0",
-            "title": "Iain's house",
-            "description": "description example",
-            "userID": "2737"
+            "id": "15033",
+            "title": "Iain's Listing",
+            "description": "House description",
+            "userID": "8964"
         },
         {
-            "id": "19821",
-            "title": "title",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "userID": "2737"
+            "id": "20607",
+            "title": "Sandra's house",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "userID": "1734"
         }
     ],
     "Users": [
@@ -18,29 +18,15 @@
             "firstName": "Iain",
             "lastName": "Donald",
             "email": "iaindonald@outlook.com",
-            "pw": "password",
-            "userID": "2737"
+            "pw": "$2b$12$mpXrxbgpw6M7wG.OxFrSjuS1/AdA7lJV6/ta2UHe6LNBmKVLO1/lK",
+            "userID": "8964"
         },
         {
             "firstName": "Sandra",
             "lastName": "Militaru",
             "email": "sandra.militaru@gmail.com",
-            "pw": "password",
-            "userID": "4514"
-        },
-        {
-            "firstName": "Encrypted",
-            "lastName": "E",
-            "email": "Email2",
-            "pw": "$2b$12$IFyMBj1uynhAYd0DjWy3BuI/cJQBA0LwGmPiOL/.GN58KagvZGj2i",
-            "userID": "163"
-        },
-        {
-            "firstName": "Alan",
-            "lastName": "Donald",
-            "email": "ad@comcast.com",
-            "pw": "pass",
-            "userID": "9297"
+            "pw": "$2b$12$A1TIiH.dhLijygoDl3jHLeVA/8ADltLrdVIpCZM3W6/mSKzsiZMpG",
+            "userID": "1734"
         }
     ]
 }

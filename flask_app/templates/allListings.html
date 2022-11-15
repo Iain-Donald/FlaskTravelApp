@@ -33,7 +33,7 @@
         <div class="listingBody">
             <div class="headingBox">
                 <h2>{{Listings[i]['title']}}</h2>
-                {%if (allListingsUserList[i] == currentUser['firstName'])%}
+                {%if (userIDs[i] == currentUser['userID'])%}
                     <h4>Listed by <i style="color:purple">you</i></h4>
                     <h4><i><a href="/deleteListing/{{currentUser['userID']}}/{{Listings[i]['id']}}" style="color:purple; text-decoration: none;">(delete, </a><a href="/editListing/{{currentUser['userID']}}/{{Listings[i]['id']}}" style="color:purple; text-decoration: none;">edit)</a></i></h4>
                 {% else %}
@@ -45,7 +45,7 @@
                 <p>{{Listings[i]['description']}}</p>
             </div>
             <div class="photoBox">
-                <p>Images Go Here</p>
+                <img src="../static/images/mountain.png" alt="Mountain" class="imageBox">
             </div>
         </div>
         {% endfor %}

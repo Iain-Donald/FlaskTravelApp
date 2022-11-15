@@ -22,3 +22,6 @@
  - pipenv shell
  - python server.py
  - pip install flask-bcrypt
+
+
+ https://www.w3schools.com/howto/howto_js_lightbox.asp
