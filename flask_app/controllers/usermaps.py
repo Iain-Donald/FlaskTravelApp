@@ -9,6 +9,10 @@ import json, random
 
 """    ROUTES    """
 
+@app.route("/")
+def routeToLogin():
+    return redirect("/login")
+
 @app.route('/<testNum>')
 def hello_world(testNum):
     returnString = "Hello World! " + testNum
@@ -97,6 +101,13 @@ def newListing(userID):
 def new():
 
     rawPW = request.form.get("password")
+
+    #PW validation
+
+    if(len(rawPW) < 8):
+        session['newAccountError'] = "minimum 8 character password"
+        return render_template('login.html')
+
     pw_hash = bcrypt.generate_password_hash(rawPW).decode('utf-8')
 
     #get object to be transferred to JSON for db.json
@@ -118,8 +129,6 @@ def new():
     conf = request.form.get("conf")
 
     """implement check for if userID exists and assign new userID"""
-
-    ###print(json.dumps(data))
 
     #insert object to JSON file
 

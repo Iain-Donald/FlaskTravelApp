@@ -12,6 +12,7 @@
  - ability to click on user to get contact info
  - move usermaps add to JSON functions to dbtalk and call dbtalk in usermaps
  - loop through bCrypt string, set /$ to @#
+ - implement check for if userID exists and assign new userID when creating new account
 
 
  Environment Commands:
