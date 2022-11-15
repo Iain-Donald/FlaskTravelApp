@@ -69,12 +69,16 @@ def loginPOST():
             session['loginError'] = "one or more fields left blank"
             return redirect("/login")
 
-    # get user by email
-    retrievedUserByEmail = dbtalk.dbtalk.getUserByEmail(data['email'])
-    hashedPass = retrievedUserByEmail['pw']
-
     # default case return back to login page
     redirectString = "/login"
+
+    # get user by email
+    retrievedUserByEmail = dbtalk.dbtalk.getUserByEmail(data['email'])
+    if(retrievedUserByEmail == "-1"):
+        session['loginError'] = "incorrect email or password"
+        return redirect(redirectString)
+
+    hashedPass = retrievedUserByEmail['pw']
 
     """ and bcrypt.check_password_hash(retrievedUserByEmail['pw'].decode('utf8'), data['pw'])"""
     """ and retrievedUserByEmail['pw'] == data['pw'] """
@@ -86,7 +90,7 @@ def loginPOST():
         session['loginError'] = ""
         session['newAccountError'] = ""
     else:
-        session['loginError'] = "Incorrect username or password"
+        session['loginError'] = "incorrect email or password"
 
     return redirect(redirectString)
 
