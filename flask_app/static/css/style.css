@@ -176,6 +176,7 @@ body {
 .descriptionBody {
   width: 70%;
   padding: 0px 5%;
+  overflow-y: auto;
 }
 
 .photoBox {
