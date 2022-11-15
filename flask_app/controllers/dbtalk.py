@@ -7,20 +7,29 @@ class dbtalk:
         data = json.load(f)
         listingData = "-1"
         for i in data['Listings']:
-            print(i)
+            #print(i)
             if(int(i['id']) == id):
                 listingData = i
             
         return listingData
 
     def updateListingByID(id, newData):
-        f = open('flask_app\controllers\db.json')
-        data = json.load(f)
-        listingData = "-1"
-        for i in data['Listings']:
-            print(i)
-            if(int(i['id']) == id):
-                listingData = i
+        with open('flask_app\controllers\db.json','r+') as file:
+            file_data = json.load(file)
+            for i in file_data['Listings']:
+            #print("i(id) : " + str(int(i['id'])))
+                if(int(i['id']) == int(id)):
+                    print("TRUE")
+                    i['title'] = newData['title']
+                    i['description'] = newData['description']
+            #file_data["Listings"].append(i)
+            file.seek(0)
+            json.dump(file_data, file, indent = 4)
+        #f = open('flask_app\controllers\db.json')
+        #data = json.load(f)
+        #print("ID : " + id)
+        
+
 
         return -1
 
@@ -28,7 +37,7 @@ class dbtalk:
         f = open('flask_app\controllers\db.json')
         data = json.load(f)
         for i in data['Users']:
-            print(i)
+            #print(i)
             if(int(i['userID']) == int(id)):
                 return i
             
@@ -39,7 +48,7 @@ class dbtalk:
         data = json.load(f)
         userData = "-1"
         for i in data['Users']:
-            print(i)
+            #print(i)
             if(i['email'] == email):
                 userData = i
             
@@ -68,7 +77,7 @@ class dbtalk:
         idx = 0
 
         for i in data['Listings']:
-            print(i['id'] + "  ID: " + ID)
+            #print(i['id'] + "  ID: " + ID)
             if i['id'] == ID:
                 print("TRUE")
                 del data['Listings'][idx]

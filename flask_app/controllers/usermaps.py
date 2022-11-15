@@ -67,7 +67,6 @@ def loginPOST():
 
     # get user by email
     retrievedUserByEmail = dbtalk.dbtalk.getUserByEmail(data['email'])
-    print(retrievedUserByEmail['pw'])
     hashedPass = retrievedUserByEmail['pw']
 
     # default case return back to login page
@@ -180,5 +179,17 @@ def editListing(userID, listingID):
 
 @app.route('/editListingPost/<userID>/<listingID>', methods=['POST', 'GET'])
 def editListingPost(userID, listingID):
+
+    data = {
+        "title": request.form.get("title"),
+        "description" : request.form.get("description")
+    }
+
+    dbtalk.dbtalk.updateListingByID(listingID, data)
+
+    #print(data['title'] + " " + data['description'])
+
+
+
     redirectString = "/allListings/" + userID
     return redirect(redirectString)
