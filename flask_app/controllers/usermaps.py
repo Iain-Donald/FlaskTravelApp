@@ -178,7 +178,7 @@ def editListing(userID, listingID):
 
     return render_template('editListing.html', userID = userID, listingID = listingID)
 
-@app.route('/editListingPost/<userID>', methods=['POST', 'GET'])
-def editListingPost(userID, newData):
+@app.route('/editListingPost/<userID>/<listingID>', methods=['POST', 'GET'])
+def editListingPost(userID, listingID):
     redirectString = "/allListings/" + userID
     return redirect(redirectString)
