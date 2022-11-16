@@ -31,9 +31,24 @@
                 <p>{{Listings[i]['description']}}</p>
             </div>
             <div class="photoBox">
-                <img src="../static/images/mountain.png" alt="Mountain" class="imageBox">
+                <img src="../static/images/mountain.png" alt="Mountain" class="imageBox" onclick="openModal();">
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <img src="../static/images/mountain.png" style="width:100%">
             </div>
         </div>
         {% endfor %}
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+        }
+    </script>
     </body>
 </html>
