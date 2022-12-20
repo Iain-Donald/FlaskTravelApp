@@ -3,6 +3,8 @@ from flask_app import app
 from flask import render_template,redirect,request,session,flash
 from flask_app.controllers import dbtalk
 from flask_bcrypt import Bcrypt
+import os
+from werkzeug.utils import secure_filename
 bcrypt = Bcrypt(app)
 app.secret_key = 'password123verysecure'
 import json, random
@@ -21,6 +23,24 @@ def hello_world(testNum):
 @app.route('/map')                           
 def map():
     return render_template('map.html')
+
+@app.route('/upImg')
+def upImg():
+    return render_template('upImg.html')
+
+@app.route('/uploadFile',  methods=("POST", "GET"))
+def uploadFile():
+    if request.method == 'POST':
+        # Upload file flask
+        uploaded_img = request.files['uploaded-file']
+        # Extracting uploaded data file name
+        img_filename = secure_filename(uploaded_img.filename)
+        # Upload file to database (defined uploaded folder in static path)
+        uploaded_img.save(os.path.join(app.config['UPLOAD_FOLDER'], img_filename))
+        # Storing uploaded file path in flask session
+        session['uploaded_img_file_path'] = os.path.join(app.config['UPLOAD_FOLDER'], img_filename)
+
+        return render_template('index_upload_and_show_data_page2.html')
 
 @app.route('/testcenter/<id>/<userID>')
 def testcenter(id, userID):
