@@ -5,14 +5,16 @@
  - page for viewing listing
  * delete button if listing is by user
  * logout button
- - background image
+ * background image
  * login errors ex: email or password invalid
  * logged in cookie
- - encrypt/decrypt password
+ * encrypt/decrypt password
  - ability to click on user to get contact info
  - move usermaps add to JSON functions to dbtalk and call dbtalk in usermaps
  - loop through bCrypt string, set /$ to @#
  - implement check for if userID exists and assign new userID when creating new account
+ - assign images to listings in DB
+ - group link to users in DB
 
 
  Environment Commands:

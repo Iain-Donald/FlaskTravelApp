@@ -24,8 +24,6 @@ class dbtalk:
             #file_data["Listings"].append(i)
             file.seek(0)
             json.dump(file_data, file, indent = 4)
-        
-
 
         return -1
 
